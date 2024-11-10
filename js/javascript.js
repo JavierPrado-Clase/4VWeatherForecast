@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     // Evento para el botón "Localización Actual"
     $('#currentLocationBtn').on('click', function() {
+        $('#locationForm').hide();
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 function(position) {

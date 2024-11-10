@@ -1,33 +1,33 @@
 // Variables de color
-$background-gradient-start: #ff0066;
-$background-gradient-end: #ff6600;
+$naranja: #FF863A;
+$rosa: #FF157B;
+$rojo: #F00B51;
 $text-color: #000000;
-$btn-pink: #ff3399;
-$card-border-color: #ff6600;
 
 // Estilo global
 body {
-    background: linear-gradient(to bottom right, $background-gradient-start, $background-gradient-end);
+    background: linear-gradient(to bottom right, $rojo, $naranja);
     color: $text-color;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Alkalami';
+    height: 100vh;
 }
 
 // Encabezado principal
 h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 4rem;
+    font-weight: bolder;
 }
 
 // Botones personalizados
 .btn-pink {
-    background-color: $btn-pink;
+    background-color: $rosa;
     color: $text-color;
     border: none;
     padding: 10px 20px;
     border-radius: 15px;
     width: 125px;
     &:hover {
-        background-color: scale-color($btn-pink, $lightness: 90%);
+        background-color: scale-color($rosa, $lightness: 50%);
     }
 }
 
@@ -35,15 +35,15 @@ h1 {
 .nav-tabs {
     .nav-link {
         color: $text-color;
-        background-color: $btn-pink;
+        background-color: $rosa;
         margin: 0 5px;
         &:hover {
-            background-color: scale-color($btn-pink, $lightness: 90%);
+            background-color: scale-color($rosa, $lightness: 50%);
         }
     }
     
     .nav-link.active {
-        background-color: $background-gradient-end;
+        background-color: $rojo;
     }
 }
 
@@ -51,12 +51,47 @@ h1 {
 .card {
     background-color: #ffffff;
     color: $text-color;
-    border: 1px solid $card-border-color;
-    border-radius: 8px;
-    
-    .card-body {
-        h6 {
-            font-weight: bold;
-        }
-    }
+    border-radius: 0%;
+    margin: 0%;
 }
+
+#cityInput {
+    background-color: $naranja;
+    border: none;
+}
+
+#logo{
+    width:200px;
+    height:150px;
+}
+
+#logo {
+    height: 100%;
+    margin: 0;
+}
+.navbar {
+    background-color: $rosa !important;
+    height: 10%;
+    padding: 0px;
+}
+
+.card {
+    margin-bottom: 0;
+    border-top: 7px solid #FF863A !important;
+    border-left: 1px solid black !important;
+    border-right: 1px solid black !important;
+    border-bottom: 1px solid black !important;
+  }
+  
+  .tab-pane {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .row {
+    margin: 0;
+  }
+  
+  .col {
+    padding: 0;
+  }

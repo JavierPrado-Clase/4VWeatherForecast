@@ -1,16 +1,17 @@
 body {
-  background: linear-gradient(to bottom right, #ff0066, #ff6600);
+  background: linear-gradient(to bottom right, #F00B51, #FF863A);
   color: #000000;
-  font-family: "Arial", sans-serif;
+  font-family: "Alkalami";
+  height: 100vh;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 4rem;
+  font-weight: bolder;
 }
 
 .btn-pink {
-  background-color: #ff3399;
+  background-color: #FF157B;
   color: #000000;
   border: none;
   padding: 10px 20px;
@@ -18,29 +19,68 @@ h1 {
   width: 125px;
 }
 .btn-pink:hover {
-  background-color: rgb(255, 234.6, 244.8);
+  background-color: #ff8abd;
 }
 
 .nav-tabs .nav-link {
   color: #000000;
-  background-color: #ff3399;
+  background-color: #FF157B;
   margin: 0 5px;
 }
 .nav-tabs .nav-link:hover {
-  background-color: rgb(255, 234.6, 244.8);
+  background-color: #ff8abd;
 }
 .nav-tabs .nav-link.active {
-  background-color: #ff6600;
+  background-color: #F00B51;
 }
 
 .card {
   background-color: #ffffff;
   color: #000000;
-  border: 1px solid #ff6600;
-  border-radius: 8px;
+  border-radius: 0%;
+  margin: 0%;
 }
-.card .card-body h6 {
-  font-weight: bold;
+
+#cityInput {
+  background-color: #FF863A;
+  border: none;
+}
+
+#logo {
+  width: 200px;
+  height: 150px;
+}
+
+#logo {
+  height: 100%;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #FF157B !important;
+  height: 10%;
+  padding: 0px;
+}
+
+.card {
+  margin-bottom: 0;
+  border-top: 7px solid #FF863A !important;
+  border-left: 1px solid black !important;
+  border-right: 1px solid black !important;
+  border-bottom: 1px solid black !important;
+}
+
+.tab-pane {
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.col {
+  padding: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

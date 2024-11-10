@@ -2,9 +2,9 @@
 const apiKey = '7bf0b1618bbb83bc887c51e28a517788';
 
 $(document).ready(function () {
-
+    $('#tabs').hide();
     $('#selectLocationBtn').on('click', function () {
-        $('#locationForm').show(); // Muestra el formulario de entrada de ciudad
+        $('#locationForm').show();
     });
 
 
@@ -114,6 +114,7 @@ function createDayColumns(dayData) {
         card.append(cardBody);
         col.append(card);
         row.append(col);
+        $('#tabs').show();
     });
 
     return row;

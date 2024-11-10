@@ -14,6 +14,10 @@ Aplicación web para consultar el clima en diferentes ubicaciones. Permite selec
 
 Clona el repositorio en tu máquina local.
 
+```bash
+   git clone https://github.com/tu-usuario/4v-weather.git
+```
+
 ### Paso 2: Abre el archivo `index.html`
 
 Abre el archivo `index.html` en un navegador para visualizar la aplicación.

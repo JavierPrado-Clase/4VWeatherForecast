@@ -4,7 +4,10 @@ $rosa: #FF157B;
 $rojo: #F00B51;
 $text-color: #000000;
 
-// Estilo global
+@mixin fondoGradient($color1, $porcentaje) {
+    background: scale-color($color1, $lightness: $porcentaje);
+}
+
 body {
     background: linear-gradient(to bottom right, $rojo, $naranja);
     color: $text-color;
@@ -12,47 +15,63 @@ body {
     height: 100vh;
 }
 
-// Encabezado principal
-h1 {
+
+%encabezado {
     font-size: 4rem;
     font-weight: bolder;
 }
 
-// Botones personalizados
-.btn-pink {
-    background-color: $rosa;
-    color: $text-color;
+h1 {
+    @extend %encabezado;
+}
+
+%boton {
     border: none;
     padding: 10px 20px;
     border-radius: 15px;
     width: 125px;
+}
+
+.btn-pink {
+    @extend %boton;
+    background-color: $rosa;
+    color: $text-color;
+
     &:hover {
-        background-color: scale-color($rosa, $lightness: 50%);
+        @include fondoGradient($rosa, 50%);
     }
 }
 
-// Estilo de las pestañas
 .nav-tabs {
     .nav-link {
         color: $text-color;
         background-color: $rosa;
         margin: 0 5px;
+
         &:hover {
-            background-color: scale-color($rosa, $lightness: 50%);
+            @include fondoGradient($rosa, 50%);
         }
     }
-    
+
     .nav-link.active {
         background-color: $rojo;
     }
 }
 
-// Estilo de las tarjetas
 .card {
     background-color: #ffffff;
     color: $text-color;
     border-radius: 0%;
     margin: 0%;
+    @extend %tarjeta;
+}
+
+%tarjeta {
+    margin-bottom: 0;
+    border-top: 7px solid #FF863A !important;
+    border-left: 1px solid black !important;
+    border-right: 1px solid black !important;
+    border-bottom: 1px solid black !important;
 }
 
 #cityInput {
@@ -60,38 +79,31 @@ h1 {
     border: none;
 }
 
-#logo{
-    width:200px;
-    height:150px;
+#logo {
+    width: 200px;
+    height: 150px;
 }
 
 #logo {
     height: 100%;
     margin: 0;
 }
+
 .navbar {
     background-color: $rosa !important;
     height: 10%;
     padding: 0px;
 }
 
-.card {
-    margin-bottom: 0;
-    border-top: 7px solid #FF863A !important;
-    border-left: 1px solid black !important;
-    border-right: 1px solid black !important;
-    border-bottom: 1px solid black !important;
-  }
-  
-  .tab-pane {
+.tab-pane {
     padding: 0;
     margin: 0;
-  }
-  
-  .row {
+}
+
+.row {
     margin: 0;
-  }
-  
-  .col {
+}
+
+.col {
     padding: 0;
-  }
+}

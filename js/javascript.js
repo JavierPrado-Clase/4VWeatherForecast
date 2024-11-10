@@ -1,21 +1,21 @@
-// Asegúrate de reemplazar 'YOUR_API_KEY' con tu clave de API de OpenWeather
+
 const apiKey = '7bf0b1618bbb83bc887c51e28a517788';
 
-$(document).ready(function() {
-    // Evento para el botón "Seleccionar Localización"
-    $('#selectLocationBtn').on('click', function() {
+$(document).ready(function () {
+
+    $('#selectLocationBtn').on('click', function () {
         $('#locationForm').show(); // Muestra el formulario de entrada de ciudad
     });
 
-    // Evento para el botón "Localización Actual"
-    $('#currentLocationBtn').on('click', function() {
+
+    $('#currentLocationBtn').on('click', function () {
         $('#locationForm').hide();
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
-                function(position) {
+                function (position) {
                     fetchWeatherDataByCoords(position.coords.latitude, position.coords.longitude);
                 },
-                function(error) {
+                function (error) {
                     alert("No se pudo obtener la ubicación. Por favor, verifica los permisos del navegador.");
                     console.error("Código de error:", error.code, "Mensaje:", error.message);
                 }
@@ -25,11 +25,11 @@ $(document).ready(function() {
         }
     });
 
-    // Evento de envío del formulario
-    $('#locationForm').on('submit', function(event) {
-        event.preventDefault(); // Evita el envío tradicional del formulario
+
+    $('#locationForm').on('submit', function (event) {
+        event.preventDefault();
         const city = $('#cityInput').val().trim();
-        
+
         if (city) {
             fetchWeatherData(city);
         } else {
@@ -38,16 +38,12 @@ $(document).ready(function() {
     });
 });
 
-// Función para obtener el clima usando la geolocalización
-
-
-// Función para obtener datos de clima por coordenadas
 function fetchWeatherDataByCoords(lat, lon) {
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`,
         method: 'GET',
         dataType: 'json',
-        success: function(response) {
+        success: function (response) {
             const daysData = groupForecastByDay(response.list);
 
             for (let i = 0; i < 5; i++) {
@@ -56,20 +52,20 @@ function fetchWeatherDataByCoords(lat, lon) {
                 dayTab.append(createDayColumns(daysData[i] || []));
             }
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             console.error("Error al obtener los datos del clima:", textStatus, errorThrown);
             alert('No se pudo obtener la información del clima. Verifica la conexión a internet y la API Key.');
         }
     });
 }
 
-// Función para obtener datos del clima por ciudad
+
 function fetchWeatherData(city) {
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`,
         method: 'GET',
         dataType: 'json',
-        success: function(response) {
+        success: function (response) {
             const daysData = groupForecastByDay(response.list);
 
             for (let i = 0; i < 5; i++) {
@@ -78,13 +74,13 @@ function fetchWeatherData(city) {
                 dayTab.append(createDayColumns(daysData[i] || []));
             }
         },
-        error: function() {
+        error: function () {
             alert('No se pudo obtener la información del clima. Verifique la ciudad y la API Key.');
         }
     });
 }
 
-// Función para agrupar los datos por día
+
 function groupForecastByDay(forecastList) {
     const daysData = {};
 
@@ -98,7 +94,7 @@ function groupForecastByDay(forecastList) {
     return Object.values(daysData).slice(0, 5);
 }
 
-// Función para crear las columnas del pronóstico de un día
+
 function createDayColumns(dayData) {
     const row = $('<div>').addClass('row text-center');
 

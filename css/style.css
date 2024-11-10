@@ -11,15 +11,19 @@ h1 {
 }
 
 .btn-pink {
-  background-color: #FF157B;
-  color: #000000;
   border: none;
   padding: 10px 20px;
   border-radius: 15px;
   width: 125px;
 }
+
+.btn-pink {
+  background-color: #FF157B;
+  color: #000000;
+}
+
 .btn-pink:hover {
-  background-color: #ff8abd;
+  background: #ff8abd;
 }
 
 .nav-tabs .nav-link {
@@ -27,9 +31,11 @@ h1 {
   background-color: #FF157B;
   margin: 0 5px;
 }
+
 .nav-tabs .nav-link:hover {
-  background-color: #ff8abd;
+  background: #ff8abd;
 }
+
 .nav-tabs .nav-link.active {
   background-color: #F00B51;
 }
@@ -39,6 +45,14 @@ h1 {
   color: #000000;
   border-radius: 0%;
   margin: 0%;
+}
+
+.card {
+  margin-bottom: 0;
+  border-top: 7px solid #FF863A !important;
+  border-left: 1px solid black !important;
+  border-right: 1px solid black !important;
+  border-bottom: 1px solid black !important;
 }
 
 #cityInput {
@@ -60,14 +74,6 @@ h1 {
   background-color: #FF157B !important;
   height: 10%;
   padding: 0px;
-}
-
-.card {
-  margin-bottom: 0;
-  border-top: 7px solid #FF863A !important;
-  border-left: 1px solid black !important;
-  border-right: 1px solid black !important;
-  border-bottom: 1px solid black !important;
 }
 
 .tab-pane {

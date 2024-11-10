@@ -1,102 +1,113 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>4V Weather</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar bg-body-tertiary">
-            <img id="logo" src="img/4V_Forecast_Logo.jpeg" alt="Logo">
-      </nav>
-        <!-- Logo y encabezado -->
-        <div class="row">
-            <div class="col-12 text-center mb-4">
-                <h1>Weather is sweet yeah!</h1>
+        <img id="logo" src="img/4V_Forecast_Logo.jpeg" alt="Logo">
+    </nav>
+
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1>Weather is sweet yeah!</h1>
+        </div>
+    </div>
+
+    <div class="container text-center my-4">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <button id="selectLocationBtn" class="btn btn-pink">Seleccionar Localización</button>
+            </div>
+            <div class="col-auto">
+                <button id="currentLocationBtn" class="btn btn-pink">Localización Actual</button>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-4">
+                <!-- Este formulario estará oculto inicialmente y solo se mostrará si se elige "Seleccionar Localización" -->
+                <form id="locationForm" class="row row-cols-lg-auto g-3 align-items-center" style="display: none;">
+                    <div class="col-12">
+                        <input type="text" id="cityInput" class="form-control" placeholder="Localización" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-pink">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <ul class="nav nav-tabs nav-fill justify-content-center" id="myTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="primero-tab" data-bs-toggle="tab" href="#primero" role="tab"
+                    aria-controls="primero" aria-selected="true">Dia 1</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="segundo-tab" data-bs-toggle="tab" href="#segundo" role="tab"
+                    aria-controls="segundo" aria-selected="false">Dia 2</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="tercero-tab" data-bs-toggle="tab" href="#tercero" role="tab"
+                    aria-controls="tercero" aria-selected="false">Dia 3</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="cuarto-tab" data-bs-toggle="tab" href="#cuarto" role="tab"
+                    aria-controls="cuarto" aria-selected="false">Dia 4</a>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="quinto-tab" data-bs-toggle="tab" href="#quinto" role="tab"
+                    aria-controls="quinto" aria-selected="false">Dia 5</a>
+            </li>
+        </ul>
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="primero" role="tabpanel" aria-labelledby="primero-tab">
+
+
+            </div>
+            <div class="tab-pane fade" id="segundo" role="tabpanel" aria-labelledby="segundo-tab">
+
+            </div>
+            <div class="tab-pane fade" id="tercero" role="tabpanel" aria-labelledby="tercero-tab">
+
+            </div>
+            <div class="tab-pane fade" id="cuarto" role="tabpanel" aria-labelledby="cuarto-tab">
+
+            </div>
+            <!-- Nuevo contenido para la pestaña "Testimonios" -->
+            <div class="tab-pane fade" id="quinto" role="tabpanel" aria-labelledby="quinto-tab">
+
             </div>
         </div>
 
-        <!-- Botones de ubicación -->
-        <div class="container text-center my-4">
-            <div class="row justify-content-center">
-                <div class="col-auto">
-                    <button id="selectLocationBtn" class="btn btn-pink">Seleccionar Localización</button>
-                </div>
-                <div class="col-auto">
-                    <button id="currentLocationBtn" class="btn btn-pink">Localización Actual</button>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-3">
-                <div class="col-md-4">
-                    <!-- Este formulario estará oculto inicialmente y solo se mostrará si se elige "Seleccionar Localización" -->
-                    <form id="locationForm" class="row row-cols-lg-auto g-3 align-items-center" style="display: none;">
-                        <div class="col-12">
-                            <input type="text" id="cityInput" class="form-control" placeholder="Localización" required>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-pink">Buscar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Pestañas de Días -->
 
-        
-        
 
-        <div class="container">
-            <ul class="nav nav-tabs nav-fill justify-content-center" id="myTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="primero-tab" data-bs-toggle="tab" href="#primero" role="tab" aria-controls="primero" aria-selected="true">Dia 1</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="segundo-tab" data-bs-toggle="tab" href="#segundo" role="tab" aria-controls="segundo" aria-selected="false">Dia 2</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="tercero-tab" data-bs-toggle="tab" href="#tercero" role="tab" aria-controls="tercero" aria-selected="false">Dia 3</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="cuarto-tab" data-bs-toggle="tab" href="#cuarto" role="tab" aria-controls="cuarto" aria-selected="false">Dia 4</a>
-                </li>
-                <!-- Nueva pestaña "Testimonios" -->
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="quinto-tab" data-bs-toggle="tab" href="#quinto" role="tab" aria-controls="quinto" aria-selected="false">Dia 5</a>
-                </li>
-            </ul>
-            
-                <!-- Intervalos de tiempo para el Día 1 -->
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="primero" role="tabpanel" aria-labelledby="primero-tab">
-                       
-                   
-                    </div>
-                    <div class="tab-pane fade" id="segundo" role="tabpanel" aria-labelledby="segundo-tab">
-                        
-                    </div>
-                    <div class="tab-pane fade" id="tercero" role="tabpanel" aria-labelledby="tercero-tab">
-                       
-                    </div>
-                    <div class="tab-pane fade" id="cuarto" role="tabpanel" aria-labelledby="cuarto-tab">
-                        
-                    </div>
-                    <!-- Nuevo contenido para la pestaña "Testimonios" -->
-                    <div class="tab-pane fade" id="quinto" role="tabpanel" aria-labelledby="quinto-tab">
-                        
-                    </div>
-                </div>
-            
-            
-            
-           
-        </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
     <script src="js/javascript.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

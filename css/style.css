@@ -1,0 +1,45 @@
+body {
+  background: linear-gradient(to bottom right, #ff0066, #ff6600);
+  color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.btn-pink {
+  background-color: #ff3399;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.btn-pink:hover {
+  background-color: rgb(255, 234.6, 244.8);
+}
+
+.nav-tabs .nav-link {
+  color: #fff;
+  background-color: #ff3399;
+  margin: 0 5px;
+}
+.nav-tabs .nav-link:hover {
+  background-color: rgb(255, 234.6, 244.8);
+}
+.nav-tabs .nav-link.active {
+  background-color: #ff6600;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid #ff6600;
+  border-radius: 8px;
+}
+.card .card-body h6 {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

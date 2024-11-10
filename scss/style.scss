@@ -1,0 +1,61 @@
+// Variables de color
+$background-gradient-start: #ff0066;
+$background-gradient-end: #ff6600;
+$text-color: #fff;
+$btn-pink: #ff3399;
+$card-border-color: #ff6600;
+
+// Estilo global
+body {
+    background: linear-gradient(to bottom right, $background-gradient-start, $background-gradient-end);
+    color: $text-color;
+    font-family: 'Arial', sans-serif;
+}
+
+// Encabezado principal
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+// Botones personalizados
+.btn-pink {
+    background-color: $btn-pink;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    &:hover {
+        background-color: scale-color($btn-pink, $lightness: 90%);
+    }
+}
+
+// Estilo de las pestañas
+.nav-tabs {
+    .nav-link {
+        color: $text-color;
+        background-color: $btn-pink;
+        margin: 0 5px;
+        &:hover {
+            background-color: scale-color($btn-pink, $lightness: 90%);
+        }
+    }
+    
+    .nav-link.active {
+        background-color: $background-gradient-end;
+    }
+}
+
+// Estilo de las tarjetas
+.card {
+    background-color: rgba($text-color, 0.2);  // Fondo semitransparente
+    color: $text-color;
+    border: 1px solid $card-border-color;
+    border-radius: 8px;
+    
+    .card-body {
+        h6 {
+            font-weight: bold;
+        }
+    }
+}

@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-                4V FORECAST
+                <img src="img/4V_Forecast_Logo.jpeg" alt="Logo" width="200" height="150" class="d-inline-block align-text-top">
             </a>
         </div>
     </nav>
@@ -27,76 +26,121 @@
         </div>
 
         <!-- Botones de ubicación -->
-        <div class="row justify-content-center">
-            <div class="col-12 d-flex justify-content-center">
-                <button class="btn btn-custom">Seleccionar Localización</button>
-                <button class="btn btn-custom">Localización Actual</button>
+        <div class="container text-center my-4">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <button class="btn btn-pink">Seleccionar Localización</button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-pink">Localización Actual</button>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Localización">
+                </div>
             </div>
         </div>
-
-        <!-- Campo de búsqueda de ubicación -->
-        <div class="row justify-content-center mt-3">
-            <div class="col-10 col-md-6">
-                <input type="text" class="form-control text-center" placeholder="Localización">
+    
+        <!-- Pestañas de Días -->
+        <div class="container">
+            <ul class="nav nav-tabs nav-fill justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Día 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Día 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Día 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Día 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Día 5</a>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Tabla de Pronóstico (8 intervalos por día) -->
+        <div class="container my-4">
+            <div class="row text-center">
+                <!-- Intervalos de tiempo para el Día 1 -->
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h6>03:00</h6>
+                            <img src="icono-nublado.png" alt="Nublado" class="img-fluid mb-2">
+                            <p>15°C / 11°C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h6>06:00</h6>
+                            <img src="icono-nublado.png" alt="Nublado" class="img-fluid mb-2">
+                            <p>15°C / 11°C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h6>09:00</h6>
+                            <img src="icono-nublado.png" alt="Nublado" class="img-fluid mb-2">
+                            <p>15°C / 11°C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h6>12:00</h6>
+                            <img src="icono-nublado.png" alt="Nublado" class="img-fluid mb-2">
+                            <p>15°C / 11°C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h6>15:00</h6>
+                            <img src="icono-nublado.png" alt="Nublado" class="img-fluid mb-2">
+                            <p>15°C / 11°C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h6>18:00</h6>
+                            <img src="icono-nublado.png" alt="Nublado" class="img-fluid mb-2">
+                            <p>15°C / 11°C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h6>21:00</h6>
+                            <img src="icono-nublado.png" alt="Nublado" class="img-fluid mb-2">
+                            <p>15°C / 11°C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h6>24:00</h6>
+                            <img src="icono-nublado.png" alt="Nublado" class="img-fluid mb-2">
+                            <p>15°C / 11°C</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Grid de cabecera con los días -->
-        <div class="row text-center mt-4">
-            <!-- Cada columna representa un día, ocupa 1/5 en pantallas grandes (col-md-2) y toda la fila en móvil (col-12) -->
-            <div class="col-12 col-md-2 day-header">Día 1</div>
-            <div class="col-12 col-md-2 day-header">Día 2</div>
-            <div class="col-12 col-md-2 day-header">Día 3</div>
-            <div class="col-12 col-md-2 day-header">Día 4</div>
-            <div class="col-12 col-md-2 day-header">Día 5</div>
-        </div>
-
-        <!-- Grid inferior para mostrar todas las horas del día con temperaturas -->
-        <div class="row text-center mt-2">
-            <!-- Cada bloque "hour-item" representa una hora para el día correspondiente -->
-            <div class="col-12 col-md-2 hour-item">
-                <p>03:00</p>
-                <i class="bi bi-cloud"></i>
-                <p>15 - 11</p>
-            </div>
-            <div class="col-12 col-md-2 hour-item">
-                <p>06:00</p>
-                <i class="bi bi-cloud-rain"></i>
-                <p>15 - 11</p>
-            </div>
-            <div class="col-12 col-md-2 hour-item">
-                <p>09:00</p>
-                <i class="bi bi-cloud"></i>
-                <p>15 - 11</p>
-            </div>
-            <div class="col-12 col-md-2 hour-item">
-                <p>12:00</p>
-                <i class="bi bi-sun"></i>
-                <p>16 - 12</p>
-            </div>
-            <div class="col-12 col-md-2 hour-item">
-                <p>15:00</p>
-                <i class="bi bi-cloud-drizzle"></i>
-                <p>15 - 11</p>
-            </div>
-            <div class="col-12 col-md-2 hour-item">
-                <p>18:00</p>
-                <i class="bi bi-cloud"></i>
-                <p>15 - 11</p>
-            </div>
-            <div class="col-12 col-md-2 hour-item">
-                <p>21:00</p>
-                <i class="bi bi-cloud"></i>
-                <p>15 - 11</p>
-            </div>
-            <div class="col-12 col-md-2 hour-item">
-                <p>24:00</p>
-                <i class="bi bi-cloud"></i>
-                <p>15 - 11</p>
-            </div>
-            <!-- Repetir el mismo bloque de "hour-item" para los otros días con sus respectivas horas -->
-        </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   </body>

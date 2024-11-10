@@ -1,7 +1,7 @@
 // Variables de color
 $background-gradient-start: #ff0066;
 $background-gradient-end: #ff6600;
-$text-color: #fff;
+$text-color: #000000;
 $btn-pink: #ff3399;
 $card-border-color: #ff6600;
 
@@ -24,7 +24,8 @@ h1 {
     color: $text-color;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
+    width: 125px;
     &:hover {
         background-color: scale-color($btn-pink, $lightness: 90%);
     }
@@ -48,7 +49,7 @@ h1 {
 
 // Estilo de las tarjetas
 .card {
-    background-color: rgba($text-color, 0.2);  // Fondo semitransparente
+    background-color: #ffffff;
     color: $text-color;
     border: 1px solid $card-border-color;
     border-radius: 8px;
